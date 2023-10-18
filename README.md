@@ -7,7 +7,7 @@ handling git is hard.
 
 https://pandas.pydata.org/pandas-docs/stable/index.html  
 https://matplotlib.org/  
-https://python-visualization.github.io/folium/  
+[지도 시각화]https://python-visualization.github.io/folium/  
 https://pandas-datareader.readthedocs.io/en/latest/index.html  
 
 ***
@@ -22,8 +22,8 @@ https://pandas-datareader.readthedocs.io/en/latest/index.html
 - dataframe 날짜 비교 시, **pd.Timestamp(년,월,일,시,분,초)**로 사용. 해당 클래스에 메소드(날짜, 시간)도 있음.  
 - **apply**으로 연산된 새로운 변수 생성 기능 많이 사용  
 - row추가하는 기능 많이 사용  
-    - **concat**을 사용했었네. concat은 여러개 row를 추가 가능함. 근데 dict타입으로 만들어야 해서 귀찮음. 다른거도 있음..  
-    - 
+    - **concat**을 사용했었네. concat은 여러개 row를 추가 가능함. 근데 dict타입으로 만들어야 해서 귀찮음.  
+    - df.loc[추가인덱스넘버(기존 마지막 번호에서 +1)] = ["데이터1","데이터2","데이터3"] 이게 편함  
 - 파이썬 기본 in 기능과 같은 **isin** 메소드를 dataframe에서 사용 할 수 있다.  
     ex) df["변수이름"].isin([원소1,원소2])  
     - 관련해서 **~**연산자를 dataframe앞에 붙이면 NOT을 의미  
@@ -41,7 +41,7 @@ https://pandas-datareader.readthedocs.io/en/latest/index.html
             excel = msoffcrypto.OfficeFile(f)  
             excel.load_key(password)  
             excel.decrypt(temp)  
-            df = pd.read_excel(temp,dtype=object)  
+            df = pd.read_excel(temp,dtype=object,header=None)  
             del temp  
         return df  
 - **isnull** 메소드로 결측값 확인하기  
